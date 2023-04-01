@@ -1,31 +1,24 @@
-# Build a 🐚/⛱/🍹
+# Build a 🪨/🧻/✂️
 
-# 🐚 beats 🍹 S - C
-# ⛱ beats 🐚 P - S
-# 🍹 beats ⛱ C - P
+# 🪨 beats ✂️ R - S
+# 🧻 beats 🪨 P - R
+# ✂️ beats 🧻 S - P
 # same result draw 
 
 # Pseudo-code
-# 1. ask user "🐚/⛱/🍹?" assign to variable
-# 2. randomly pick 🐚/⛱/🍹 for the computer assign to variable
-# 3. compare user and computer (with ifs or case/when)
-# 4. display result! :) 
-
-# "🐚" is a String
-puts "Select S/P/C"
-user_answer = gets.chomp.upcase
-choices = ["S", "P", "C"]
-computer_answer = choices.sample 
-
-#  draw and 6 other 
-if user_answer == computer_answer
-  result = "draw"
-elsif  (user_answer == "S" && computer_answer == "C") || 
-  (user_answer == "P" && computer_answer == "S") || 
-  (user_answer == "C" && computer_answer == "P")
-  result = "win"
+#1. display list of options 
+#2. player choose option 
+#3. computer chooses randomely
+#4. compare both options
+#5. show result 
+# Code
+puts "Choose Option:🪨/🧻/✂️"
+user_choice= gets.chomp 
+computer_choice = ["🪨","🧻","✂️"].sample
+if user_choice == computer_choice
+  puts "It's a draw!"
+elsif (user_choice == "🪨" && computer_choice == "✂️" )|| (user_choice == "🧻" && computer_choice == "🪨")|| (user_choice == "✂️" && computer_choice == "🧻")
+  puts "You win! The computer choice was #{computer_choice}"
 else 
-  result = "lose"
-end  
-  
-puts "You #{result}, computer answer was #{computer_answer}"
+  puts "You lose!The computer choice was #{computer_choice}"
+end

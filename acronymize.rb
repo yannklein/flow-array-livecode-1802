@@ -3,31 +3,28 @@
 # TDD methodology: Test Driven Development == we start be creating the tests and then code
 
 # Method signature:
-#  name: break_the_acronym
+#  name: acronymize
 #  param(s): sentence (String)
 #  returns: acronym (String)
 
+# Pseudo-code
+
 # Code
-def break_the_acronym(sentence)
-  acronym = []
-  # split sentence
-  # store data in an array 
-  words = sentence.split(" ")
-  # iterate over the array
-  words.each do |word| 
-    # taking the first character of each word
-    # store them into a new array
-    acronym.push(word[0]) 
+def acronymize(sentence)
+  # 0. first thing in the method: create an empty array
+  # acronym = []
+  # 1. split by space words of the sentence and store it in a array (array of words)
+  # 2. for each word, capitalize it and take the first letter store it in an array
+  acronym = sentence.split(" ").map do |word|
+    word[0].upcase
   end
-  # join this new array using array.join
-  # change into upcase
-  # return result -> acronym
-  return acronym.join("").upcase
+  # 3. JOIN! the array element into 1 string
+  # 4. return string!
+  acronym.join
 end
 
 # Tests
-# p break_the_acronym("Le Wagon")
 puts "-- Test Results -- "
-puts break_the_acronym("Le Wagon").class == String
-puts break_the_acronym("Le Wagon Tokyo") == "LWT"
-puts break_the_acronym("working from home") == "WFH"
+puts acronymize("Frequently asked questions").class == String
+puts acronymize("Frequently asked questions").upcase == acronymize("Frequently asked questions")
+puts acronymize("Frequently asked questions") == "FAQ"
