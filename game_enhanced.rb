@@ -11,7 +11,7 @@ outcome_results = {
   🧻✂️: "lose",
 }
 
-user_answer = gets.chomp.upcase
+user_answer = gets.chomp
 choices = ["🪨", "✂️", "🧻"]
 computer_answer = choices.sample 
 
