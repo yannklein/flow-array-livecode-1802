@@ -1,24 +1,36 @@
-# Build a 🪨/🧻/✂️
+# Build a 🪨/🧻/💇
 
-# 🪨 beats ✂️ R - S
-# 🧻 beats 🪨 P - R
-# ✂️ beats 🧻 S - P
+# 🪨 beats 💇
+# 🧻 beats 🪨
+# 💇 beats 🧻
 # same result draw 
 
+# "🪨"
+
 # Pseudo-code
-#1. display list of options 
-#2. player choose option 
-#3. computer chooses randomely
-#4. compare both options
-#5. show result 
-# Code
-puts "Choose Option:🪨/🧻/✂️"
-user_choice= gets.chomp 
-computer_choice = ["🪨","🧻","✂️"].sample
-if user_choice == computer_choice
-  puts "It's a draw!"
-elsif (user_choice == "🪨" && computer_choice == "✂️" )|| (user_choice == "🧻" && computer_choice == "🪨")|| (user_choice == "✂️" && computer_choice == "🧻")
-  puts "You win! The computer choice was #{computer_choice}"
-else 
-  puts "You lose!The computer choice was #{computer_choice}"
+
+# randomize computer answer
+# ask user for input
+# else print wrong input
+# if statement comparing the user input to computer
+# print a winner
+  
+
+  # Code
+answer_array =["💇", "🪨", "🧻"]
+comp_input = answer_array.sample
+
+puts "Rock, paper, scissors ?"
+user_input = gets.chomp
+
+if !answer_array.include?(user_input)
+  puts "try again"
+elsif user_input == comp_input
+  puts "draw !"
+elsif (user_input == "💇" && comp_input == "🪨") || (user_input == "🪨" && comp_input ==  "🧻")
+  puts "you lose"
+else
+  puts " You win"
 end
+
+puts "#{user_input} VS #{comp_input}"

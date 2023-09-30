@@ -1,18 +1,18 @@
-puts "Select 🪨/✂️/🧻"
+puts "Select 🪨/💇/🧻"
 outcome_results = {
-  🪨✂️: "win",
+  🪨💇: "win",
   🧻🪨: "win",
-  ✂️🧻: "win",
+  💇🧻: "win",
   🪨🪨: "draw",
   🧻🧻: "draw",
-  ✂️✂️: "draw",
-  ✂️🪨: "lose",
+  💇💇: "draw",
+  💇🪨: "lose",
   🪨🧻: "lose",
-  🧻✂️: "lose",
+  🧻💇: "lose",
 }
 
 user_answer = gets.chomp
-choices = ["🪨", "✂️", "🧻"]
+choices = ["🪨", "💇", "🧻"]
 computer_answer = choices.sample 
 
 outcome = user_answer + computer_answer
